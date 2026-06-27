@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt" data-lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cxi5 — Leonardo Sebastião | Front-end Developer Angola</title>
+  <meta name="description" content="Leonardo Sebastião, também conhecido como Cxi5 — Front-end Developer em Luanda, Angola. Desenvolvimento web com HTML, CSS, JavaScript, React, Node.js, PHP e MySQL. Disponível para projetos freelance." />
+  <meta name="keywords" content="developer angola, desenvolvedor angola, front end angola, web developer luanda, cxi5, leonardo sebastião, freelance angola, react developer angola, javascript angola, html css angola, desenvolvimento web angola, dev angola, programador angola, website angola, criar site angola, developer luanda, programador luanda" />
+  <meta name="author" content="Leonardo Sebastião — Cxi5" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#0A0E1A" />
+  <link rel="canonical" href="https://cxi5.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cxi5.github.io/" />
+  <meta property="og:title" content="Cxi5 — Leonardo Sebastião | Front-end Developer Angola" />
+  <meta property="og:description" content="Front-end Developer em Luanda, Angola. Criação de interfaces web modernas com HTML, CSS, JavaScript, React e muito mais. Disponível para freelance." />
+  <meta property="og:locale" content="pt_AO" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="Cxi5 — Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@cx50z" />
+  <meta name="twitter:creator" content="@cx50z" />
+  <meta name="twitter:title" content="Cxi5 — Leonardo Sebastião | Front-end Developer Angola" />
+  <meta name="twitter:description" content="Front-end Developer em Luanda, Angola. React, JavaScript, HTML/CSS, Node.js, PHP. Disponível para projetos freelance." />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Leonardo Sebastião",
+    "alternateName": "Cxi5",
+    "url": "https://cxi5.github.io/",
+    "jobTitle": "Front-end Developer",
+    "description": "Front-end Developer em Luanda, Angola. Especialista em HTML, CSS, JavaScript, React, Node.js, PHP e MySQL.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Luanda",
+      "addressCountry": "AO"
+    },
+    "sameAs": [
+      "https://github.com/cxi5",
+      "https://codepen.io/cxi5",
+      "https://x.com/cx50z",
+      "https://ko-fi.com/cxi50"
+    ],
+    "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Node.js", "PHP", "MySQL", "Tailwind CSS", "PWA", "Web Development"],
+    "offers": {
+      "@type": "Offer",
+      "description": "Desenvolvimento web freelance — sites, plataformas e aplicações web",
+      "areaServed": "Worldwide",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://wa.me/244972445044"
+      }
+    }
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;700&family=Orbitron:wght@700&family=Syne:wght@700&family=Rajdhani:wght@600&family=Share+Tech+Mono&family=Exo+2:wght@600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init('YOUR_EMAILJS_PUBLIC_KEY');</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="matrix-canvas"></canvas>
+
+<!-- LANG BUTTON -->
+<button id="lang-btn" onclick="toggleLang()">
+  <span>🌐</span>
+  <span id="lang-label">EN</span>
+</button>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-alias">Cx<span>i5</span></div>
+  <div class="loader-text" id="loader-text">Initializing...</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+</div>
+
+<!-- DOCK -->
+<nav id="dock">
+  <a href="#hero" class="dock-item active" data-section="hero">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+    <span class="dock-label" data-pt="// início" data-en="// home">// início</span>
+  </a>
+  <a href="#about" class="dock-item" data-section="about">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    <span class="dock-label" data-pt="// sobre" data-en="// about">// sobre</span>
+  </a>
+  <a href="#skills" class="dock-item" data-section="skills">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    <span class="dock-label" data-pt="// skills" data-en="// skills">// skills</span>
+  </a>
+  <a href="#projects" class="dock-item" data-section="projects">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+    <span class="dock-label" data-pt="// projetos" data-en="// projects">// projetos</span>
+  </a>
+  <a href="#testimonials" class="dock-item" data-section="testimonials">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    <span class="dock-label" data-pt="// depoimentos" data-en="// testimonials">// depoimentos</span>
+  </a>
+  <a href="#contact" class="dock-item" data-section="contact">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <span class="dock-label" data-pt="// contacto" data-en="// contact">// contacto</span>
+  </a>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <div>
+    <p class="hero-eyebrow" data-pt="Disponível para projetos freelance" data-en="Available for freelance projects">Disponível para projetos freelance</p>
+    <h1 class="hero-name">
+      <span class="glitch-wrap" data-text="Leonardo">Leonardo</span><br>
+      <span style="color:var(--cyan)">Sebastião</span>
+    </h1>
+    <div class="hero-alias">Cxi5</div>
+    <p class="hero-build">
+      <span class="hero-prefix" data-pt="Desenvolvo com&nbsp;" data-en="I build with&nbsp;">Desenvolvo com&nbsp;</span>
+      <span id="hero-word-display"></span><span class="cursor-blink"></span>
+    </p>
+    <div class="hero-cta">
+      <!-- Botão WhatsApp no lugar de "ver projetos" -->
+      <a href="https://wa.me/244972445044" target="_blank" class="btn-whatsapp" data-pt="Fala comigo no WhatsApp" data-en="Chat with me on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a13 13 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Fala comigo no WhatsApp
+      </a>
+      <a href="#contact" class="btn-ghost" data-pt="entrar em contacto" data-en="get in touch">entrar em contacto</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="scroll-line"></span>
+    <span data-pt="ROLAR" data-en="SCROLL">ROLAR</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div style="width:100%">
+    <p class="section-label reveal" data-pt="01 — sobre mim" data-en="01 — about me">01 — sobre mim</p>
+    <h2 class="section-title reveal" data-pt="Quem sou." data-en="Who I am.">Quem sou.</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p data-pt='Olá! Sou o Leonardo, também conhecido como <strong style="color:var(--cyan)">Cxi5</strong> — developer front-end com 3 anos de experiência a construir interfaces reais para a web.' data-en='Hey! I&apos;m Leonardo, also known as <strong style="color:var(--cyan)">Cxi5</strong> — a front-end developer with 3 years of experience building real interfaces for the web.'>
+          Olá! Sou o Leonardo, também conhecido como <strong style="color:var(--cyan)">Cxi5</strong> — developer front-end com 3 anos de experiência a construir interfaces reais para a web.
+        </p>
+        <p data-pt='O meu foco está na camada visual: <strong style="color:var(--white)">HTML, CSS, JavaScript e React</strong> são as ferramentas que uso no dia-a-dia para criar interfaces rápidas, acessíveis e visualmente marcantes.' data-en='My focus is on the visual layer: <strong style="color:var(--white)">HTML, CSS, JavaScript and React</strong> are my daily tools for crafting fast, accessible, and visually striking interfaces.'>
+          O meu foco está na camada visual: <strong style="color:var(--white)">HTML, CSS, JavaScript e React</strong> são as ferramentas que uso no dia-a-dia para criar interfaces rápidas, acessíveis e visualmente marcantes.
+        </p>
+        <p data-pt='Já construí plataformas sociais para músicos independentes, sistemas de gestão e muito mais. Actualmente aceito projectos freelance — <a href="https://wa.me/244972445044" target="_blank" class="wa-text-link">fala comigo</a> se tens uma ideia.' data-en='I&apos;ve built social platforms for independent musicians, management systems, and much more. Currently accepting freelance projects — <a href="https://wa.me/244972445044" target="_blank" class="wa-text-link">reach out</a> if you have an idea.'>
+          Já construí plataformas sociais para músicos independentes, sistemas de gestão e muito mais. Actualmente aceito projectos freelance — <a href="https://wa.me/244972445044" target="_blank" class="wa-text-link">fala comigo</a> se tens uma ideia.
+        </p>
+        <p data-pt='Podes encontrar o meu trabalho no <a href="https://github.com/cxi5" target="_blank">GitHub</a>, os meus experimentos no <a href="https://codepen.io/cxi5" target="_blank">CodePen</a>, e apoiar o meu trabalho via <a href="https://ko-fi.com/cxi50" target="_blank">Ko-fi</a>.' data-en='You can find my work on <a href="https://github.com/cxi5" target="_blank">GitHub</a>, my experiments on <a href="https://codepen.io/cxi5" target="_blank">CodePen</a>, and support my work via <a href="https://ko-fi.com/cxi50" target="_blank">Ko-fi</a>.'>
+          Podes encontrar o meu trabalho no <a href="https://github.com/cxi5" target="_blank">GitHub</a>, os meus experimentos no <a href="https://codepen.io/cxi5" target="_blank">CodePen</a>, e apoiar o meu trabalho via <a href="https://ko-fi.com/cxi50" target="_blank">Ko-fi</a>.
+        </p>
+      </div>
+      <div class="reveal">
+        <div class="code-block">
+<span class="kw">class</span> <span class="cn">Cxi5</span> {<br>
+<br>
+&nbsp;&nbsp;<span class="cm">// I build, therefore I am.</span><br>
+<br>
+&nbsp;&nbsp;<span class="fn">constructor</span>() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">this</span>.<span class="nm">name</span> = <span class="str">'Leonardo Sebastião'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">this</span>.<span class="nm">alias</span> = <span class="str">'Cxi5'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">this</span>.<span class="nm">location</span> = <span class="str">'Luanda, Angola 🇦🇴'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">this</span>.<span class="nm">role</span> = <span class="str">'Front-end Developer'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">this</span>.<span class="nm">available</span> = <span class="cn">true</span><br>
+&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;<span class="fn">stack</span>() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'HTML'</span>, <span class="str">'CSS'</span>, <span class="str">'JavaScript'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'React'</span>, <span class="str">'Tailwind'</span>, <span class="str">'Node.js'</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">'PHP'</span>, <span class="str">'MySQL'</span>, <span class="str">'PWA'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+&nbsp;&nbsp;}<br>
+<br>
+&nbsp;&nbsp;<span class="fn">projects</span>() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> [<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="nm">name</span>: <span class="str">'Tunerise'</span>, <span class="nm">type</span>: <span class="str">'Social Network'</span> },<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="nm">name</span>: <span class="str">'StayOS'</span>, <span class="nm">type</span>: <span class="str">'Hotel Management'</span> },<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="nm">name</span>: <span class="str">'NexDoc'</span>, <span class="nm">type</span>: <span class="str">'Legal Tech'</span> }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+&nbsp;&nbsp;}<br>
+}<br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div style="width:100%">
+    <p class="section-label reveal" data-pt="02 — ferramentas" data-en="02 — tools">02 — ferramentas</p>
+    <h2 class="section-title reveal" data-pt="O meu stack." data-en="My stack.">O meu stack.</h2>
+    <div class="skills-grid" id="skills-grid">
+      <div class="skill-tag" data-label="HTML5">
+        <svg class="skill-icon" viewBox="0 0 32 32"><path d="M5.902 27.201L4 5h24l-1.902 22.201L15.985 30z" fill="#e44d26"/><path d="M16 27.858l8.17-2.265 1.624-18.206H16z" fill="#f16529"/><path d="M16 13.407h-4.09l-.282-3.152H16V7.151H8.25l.074.83.759 8.426H16zm0 8.027l-.014.004-3.442-.929-.22-2.465H9.221l.433 4.852 6.332 1.758.014-.004z" fill="#ebebeb"/><path d="M15.989 13.407v3.1h3.806l-.358 4.009-3.448.93v3.216l6.337-1.757.046-.522.726-8.137.076-.839zm0-6.256v3.104h7.466l.062-.694.141-1.575.074-.835z" fill="#fff"/></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="CSS3">
+        <svg class="skill-icon" viewBox="0 0 32 32"><path d="M5.902 27.201L4 5h24l-1.902 22.201L15.985 30z" fill="#1572b6"/><path d="M16 27.858l8.17-2.265 1.624-18.206H16z" fill="#33a9dc"/><path d="M16 13.375h4.09l-.284 3.154H16v3.1h3.544l-.333 3.806-3.211.866v3.22l6.329-1.754.046-.522.726-8.137.076-.839.62-6.92H16zm-7.74 0h3.796l.075.843.284 3.154H8.26l.433 4.854H16v-3.1h-4.114l-.284-3.154H16V10.22H8.19z" fill="#fff"/></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="JavaScript">
+        <svg class="skill-icon" viewBox="0 0 32 32"><path d="M4 4h24v24H4z" fill="#f7df1e"/><path d="M21.656 20.56c.451.784.882 1.45 1.89 1.45 1.006 0 1.64-.393 1.64-1.924v-9.924h-2.441v9.89c0 .75-.31.979-.753.979-.47 0-.666-.324-.888-.71zm-6.403.324c.588.98 1.351 1.7 2.7 1.7 1.137 0 1.865-.569 1.865-1.353 0-.941-.745-1.271-1.999-1.814l-.686-.294c-1.98-.843-3.294-1.9-3.294-4.134 0-2.06 1.567-3.627 4.017-3.627 1.745 0 2.999.608 3.9 2.195l-2.136 1.37c-.47-.839-.979-1.17-1.764-1.17-.804 0-1.312.51-1.312 1.17 0 .82.51 1.151 1.686 1.66l.687.293c2.332.999 3.646 2.02 3.646 4.312 0 2.47-1.94 3.823-4.547 3.823-2.548 0-4.194-1.215-4.998-2.803z" fill="#000"/></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="React">
+        <svg class="skill-icon" viewBox="0 0 32 32"><circle cx="16" cy="16" r="2.5" fill="#61dafb"/><path d="M16 10.5c4.42 0 8.41.77 11.33 2.01C30.24 13.77 32 15.4 32 17s-1.76 3.23-4.67 4.49C24.41 22.73 20.42 23.5 16 23.5s-8.41-.77-11.33-2.01C1.76 20.23 0 18.6 0 17s1.76-3.23 4.67-4.49C7.59 11.27 11.58 10.5 16 10.5z" fill="none" stroke="#61dafb" stroke-width="1.3"/><path d="M11.52 13.75c2.21-3.83 4.83-6.79 7.03-8.53C20.74 3.49 22.7 3.03 24 3.78s1.83 2.67 1.52 5.46c-.27 2.42-1.3 5.33-2.84 8.18-1.54 2.85-3.32 5.35-5.11 7.1-2.19 2.08-4.26 2.93-5.57 2.18s-1.83-2.67-1.52-5.46c.27-2.42 1.3-5.33 2.84-8.18z" fill="none" stroke="#61dafb" stroke-width="1.3"/><path d="M11.52 20.25C9.31 16.42 8.08 12.5 8.11 9.27c.02-2.77 1.01-4.61 2.31-4.61s2.79 1.79 4.05 4.83c1.09 2.61 1.92 5.92 2.21 9.07.29 3.15.05 6.08-.66 8.21-.82 2.45-2.05 3.73-3.35 3.73-1.3 0-2.56-1.28-3.39-3.73-.43-1.29-.69-2.85-.77-4.52z" fill="none" stroke="#61dafb" stroke-width="1.3"/></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="Tailwind">
+        <svg class="skill-icon" viewBox="0 0 32 32"><path d="M16 7c-2.667 0-4.333 1.333-5 4 1-1.333 2.167-1.833 3.5-1.5.76.19 1.304.742 1.904 1.352C17.35 11.918 18.533 13 21 13c2.667 0 4.333-1.333 5-4-1 1.333-2.167 1.833-3.5 1.5-.76-.19-1.304-.742-1.904-1.352C19.65 8.082 18.467 7 16 7zm-5 8c-2.667 0-4.333 1.333-5 4 1-1.333 2.167-1.833 3.5-1.5.76.19 1.304.742 1.904 1.352C12.35 19.918 13.533 21 16 21c2.667 0 4.333-1.333 5-4-1 1.333-2.167 1.833-3.5 1.5-.76-.19-1.304-.742-1.904-1.352C14.65 16.082 13.467 15 11 15z" fill="#38bdf8"/></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="Node.js">
+        <svg class="skill-icon" viewBox="0 0 32 32"><path d="M16 3L3 10.5v15L16 29l13-3.5v-15z" fill="#339933"/><path d="M16 7l-9 5v10l9 5 9-5V12z" fill="#fff" opacity=".1"/><text x="8.5" y="21" font-family="Arial" font-weight="bold" font-size="9" fill="#fff">Node</text></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="PHP">
+        <svg class="skill-icon" viewBox="0 0 32 32"><ellipse cx="16" cy="16" rx="14" ry="9.5" fill="#8892bf"/><path d="M12.25 11h2l-.5 2.5h1.5c1.4 0 2.25.6 2 2L16.75 19h-2l.5-2.5c.1-.5-.1-.75-.6-.75H13.2L12.45 19h-2zm8 0h2l-.5 2.5h1.5c1.4 0 2.25.6 2 2L24.75 19h-2l.5-2.5c.1-.5-.1-.75-.6-.75h-1.45L20.45 19h-2zM7.75 13.5h4.5c.7 0 1.1.4.9 1l-.15.75c-.2.6-.9 1-1.6 1H9.9l-.25 1.25h-2zm1.5 1l-.25 1h1.1c.3 0 .55-.15.6-.5l.05-.25c.05-.2-.1-.3-.35-.3z" fill="#fff"/></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="MySQL">
+        <svg class="skill-icon" viewBox="0 0 32 32"><path d="M28.65 19.75c-1.15-.05-2.04.08-2.78.4-.21.09-.55.09-.58.35.11.12.13.3.22.45.17.28.46.66.72.86.28.22.57.45.87.64.54.33 1.14.52 1.66.85.31.19.61.44.92.65.15.1.25.26.44.32v-.04c-.1-.13-.13-.31-.23-.45l-.42-.42c-.41-.54-.93-1.02-1.49-1.4-.44-.31-1.42-.72-1.6-1.23l-.03-.03c.31-.03.67-.14.96-.23.48-.13.92-.1 1.41-.23l.67-.2v-.13c-.25-.26-.43-.6-.7-.84-.71-.61-1.48-1.22-2.28-1.72-.44-.28-.99-.46-1.45-.7-.16-.08-.44-.12-.54-.25-.25-.31-.38-.71-.57-1.06-.4-.76-.78-1.6-1.12-2.4-.24-.54-.4-1.07-.7-1.57-1.44-2.36-2.99-3.79-5.39-5.2-.51-.3-1.13-.42-1.78-.58l-1.05-.06c-.22-.09-.45-.36-.64-.49-.8-.5-2.85-1.59-3.44-.16-.37.9.55 1.78.87 2.24.23.32.53.67.69 1.03.11.24.13.49.24.74.26.62.5 1.3.82 1.88.17.29.35.6.55.86.13.16.34.24.38.5-.22.3-.23.76-.35 1.14-.55 1.72-.34 3.86.45 5.12.24.39.81 1.22 1.58.9.68-.28.53-1.14.72-1.9.04-.17.02-.28.11-.39v.03l.66 1.33c.49.78 1.35 1.6 2.07 2.14.38.28.68.76 1.15.93v-.04h-.03c-.09-.14-.23-.2-.35-.3-.28-.25-.58-.57-.81-.85-.64-.83-1.2-1.74-1.7-2.68-.24-.46-.45-.97-.65-1.44-.08-.18-.08-.45-.22-.54-.2.3-.5.55-.65.91-.26.59-.29 1.31-.38 2.07-.06.02-.03.01-.06.03-.47-.11-.63-.6-.8-1.01-.44-1.05-.52-2.74-.13-3.96.1-.31.54-1.28.36-1.57-.09-.28-.38-.44-.54-.67-.19-.26-.38-.6-.52-.9-.35-.73-.51-1.55-.87-2.28-.17-.35-.47-.71-.71-1.03-.27-.36-.57-.62-.78-1.04-.07-.15-.17-.4-.06-.57.03-.11.08-.15.19-.17.18-.14.69.04.87.11.5.18.91.35 1.33.62.2.13.4.38.64.44h.28c.44.1.93.03 1.34.16.72.22 1.37.57 1.95.94 1.79 1.13 3.25 2.74 4.25 4.64.16.31.23.6.38.92.29.65.65 1.32.94 1.96.29.64.57 1.29.98 1.82.21.27 1.03.42 1.4.57.27.1.7.2.95.36.48.29.94.64 1.39.96.23.16.94.5.98.78z" fill="#00758f"/></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="Git">
+        <svg class="skill-icon" viewBox="0 0 32 32"><path d="M30.18 14.66L17.34 1.82a2.76 2.76 0 00-3.9 0L10.52 4.74l3.92 3.92a3.28 3.28 0 014.15 4.17l3.78 3.78a3.28 3.28 0 11-1.97 1.85l-3.52-3.52v9.26a3.28 3.28 0 11-2.7-.13V14.7a3.28 3.28 0 01-1.78-4.3L8.5 6.53l-6.68 6.68a2.76 2.76 0 000 3.9L15.16 30.2a2.76 2.76 0 003.9 0l11.12-11.12a2.76 2.76 0 000-3.9z" fill="#f05032"/></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="GitHub">
+        <svg class="skill-icon" viewBox="0 0 32 32"><path d="M16 2.667C8.636 2.667 2.667 8.636 2.667 16c0 5.895 3.824 10.89 9.127 12.655.667.123.912-.29.912-.644 0-.317-.012-1.372-.018-2.493-3.714.807-4.498-1.59-4.498-1.59-.607-1.543-1.482-1.953-1.482-1.953-1.212-.828.092-.812.092-.812 1.34.094 2.046 1.375 2.046 1.375 1.19 2.041 3.124 1.451 3.884 1.109.12-.862.466-1.451.848-1.784-2.966-.337-6.083-1.483-6.083-6.601 0-1.458.521-2.65 1.375-3.585-.138-.337-.595-1.698.13-3.54 0 0 1.12-.359 3.673 1.369a12.81 12.81 0 013.346-.45c1.136.005 2.281.154 3.35.45 2.547-1.728 3.664-1.37 3.664-1.37.727 1.843.27 3.204.132 3.54.857.936 1.373 2.128 1.373 3.585 0 5.13-3.121 6.26-6.097 6.59.48.413.907 1.228.907 2.474 0 1.787-.016 3.23-.016 3.67 0 .357.24.773.92.642C25.514 26.884 29.333 21.893 29.333 16c0-7.364-5.97-13.333-13.333-13.333z" fill="#fff"/></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="VS Code">
+        <svg class="skill-icon" viewBox="0 0 32 32"><path d="M23.77 3.12l-9.67 8.89-4.26-3.23-3.18 1.88v10.68l3.18 1.88 4.26-3.23 9.67 8.89 4.9-2.36V5.48zM7.94 19.78v-7.56l3.57 3.78zm12.94 4.38l-7.44-6.16 7.44-6.16z" fill="#007acc"/></svg>
+        <span class="skill-label"></span>
+      </div>
+      <div class="skill-tag" data-label="WordPress">
+        <svg class="skill-icon" viewBox="0 0 32 32"><path d="M16 2C8.27 2 2 8.27 2 16s6.27 14 14 14 14-6.27 14-14S23.73 2 16 2zm-9.55 14c0-1.12.18-2.2.51-3.21L11.93 24A9.56 9.56 0 016.45 16zm9.55 9.56a9.51 9.51 0 01-2.72-.4l2.89-8.39 2.96 8.11c.02.05.04.09.07.13a9.48 9.48 0 01-3.2.55zm1.31-14.24c.57-.03 1.09-.09 1.09-.09.51-.06.45-.82-.06-.79 0 0-1.54.12-2.54.12-.93 0-2.5-.12-2.5-.12-.52-.03-.57.75-.06.79 0 0 .49.06 1.01.09l1.5 4.1-2.1 6.32-3.5-10.42c.57-.03 1.09-.09 1.09-.09.51-.06.45-.82-.06-.79 0 0-1.54.12-2.54.12-.18 0-.39 0-.6-.01A9.56 9.56 0 0116 6.44c2.5 0 4.77.95 6.48 2.51-.04 0-.09-.01-.13-.01-.93 0-1.59.81-1.59 1.68 0 .78.45 1.44.93 2.22.36.63.78 1.44.78 2.61 0 .81-.31 1.75-.72 3.06l-.94 3.14-3.43-10.22zM21.66 24.3l2.93-8.47c.55-1.37.73-2.47.73-3.44 0-.35-.02-.68-.07-.98A9.56 9.56 0 0125.55 16a9.51 9.51 0 01-3.89 8.3z" fill="#21759b"/></svg>
+        <span class="skill-label"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div style="width:100%">
+    <p class="section-label reveal" data-pt="03 — projetos" data-en="03 — projects">03 — projetos</p>
+    <h2 class="section-title reveal" data-pt="O que construí." data-en="What I've built.">O que construí.</h2>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <p class="project-num">001</p>
+        <h3 class="project-name">Tunerise</h3>
+        <p class="project-desc" data-pt="Plataforma social para músicos independentes africanos. Feed, perfis, descoberta de artistas e sistema de publicações — construído do zero com estética premium e dark." data-en="Social platform for independent African musicians. Feed, profiles, artist discovery and post system — built from scratch with a premium dark aesthetic.">
+          Plataforma social para músicos independentes africanos. Feed, perfis, descoberta de artistas e sistema de publicações — construído do zero com estética premium e dark.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">JavaScript</span>
+        </div>
+        <a href="#" target="_blank" class="project-tag" style="display:inline-block;margin-top:1rem;text-decoration:none;color:var(--cyan);border-color:rgba(0,217,245,.3)" data-pt="Ver projeto →" data-en="View project →">Ver projeto →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <p class="project-num">002</p>
+        <h3 class="project-name">NexDoc</h3>
+        <p class="project-desc" data-pt="Plataforma de gestão documental e legal — redação inteligente de contratos, assinatura digital, arquivo seguro e painel de acompanhamento processual para escritórios de advocacia e PMEs." data-en="Legal document management platform — smart contract drafting, digital signature, secure archiving and case-tracking dashboard for law firms and SMEs.">
+          Plataforma de gestão documental e legal — redação inteligente de contratos, assinatura digital, arquivo seguro e painel de acompanhamento processual para escritórios de advocacia e PMEs.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">PDF.js</span>
+          <span class="project-tag">MySQL</span>
+        </div>
+        <a href="#" target="_blank" class="project-tag" style="display:inline-block;margin-top:1rem;text-decoration:none;color:var(--cyan);border-color:rgba(0,217,245,.3)" data-pt="Ver projeto →" data-en="View project →">Ver projeto →</a>
+      </div>
+
+      <div class="project-card reveal">
+        <p class="project-num">003</p>
+        <h3 class="project-name">StayOS</h3>
+        <p class="project-desc" data-pt="Sistema de gestão hoteleira completo — painel para staff (check-in/out, reservas, quartos, relatórios) e portal para hóspedes com interface moderna e interactiva." data-en="Complete hotel management system — staff dashboard (check-in/out, bookings, rooms, reports) and a guest portal with a modern, interactive interface.">
+          Sistema de gestão hoteleira completo — painel para staff (check-in/out, reservas, quartos, relatórios) e portal para hóspedes com interface moderna e interactiva.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">PHP</span>
+          <span class="project-tag">MySQL</span>
+          <span class="project-tag">React</span>
+          <span class="project-tag">Node.js</span>
+        </div>
+        <a href="https://cxi5.github.io/Luxury-Residences/" target="_blank" class="project-tag" style="display:inline-block;margin-top:1rem;text-decoration:none;color:var(--cyan);border-color:rgba(0,217,245,.3)" data-pt="Ver projeto →" data-en="View project →">Ver projeto →</a>
+      </div>
+
+      <!-- Card vazio intencional — abre WhatsApp -->
+      <div class="project-card reveal" style="border-style:dashed;border-color:rgba(0,217,245,0.15);">
+        <p class="project-num">···</p>
+        <h3 class="project-name" style="color:var(--muted)" data-pt="Próximo projecto" data-en="Next project">Próximo projecto</h3>
+        <p class="project-desc" style="color:var(--muted)" data-pt="Tens uma ideia? Posso ser o developer que a vai transformar em realidade." data-en="Got an idea? I might be the developer to make it real.">Tens uma ideia? Posso ser o developer que a vai transformar em realidade.</p>
+        <div class="project-tags">
+          <a href="https://wa.me/244972445044" target="_blank" class="project-tag" style="text-decoration:none;color:#25D366;border-color:rgba(37,211,102,.3);" data-pt="💬 falar no WhatsApp →" data-en="💬 chat on WhatsApp →">💬 falar no WhatsApp →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div style="width:100%">
+    <p class="section-label reveal" data-pt="04 — depoimentos" data-en="04 — testimonials">04 — depoimentos</p>
+    <h2 class="section-title reveal" data-pt="O que dizem." data-en="What they say.">O que dizem.</h2>
+    <div class="testimonials-grid reveal">
+      <div class="testimonial-card">
+        <p class="testimonial-text" data-pt='"Entrega exatamente o que promete, com qualidade e dentro do prazo. Recomendo sem hesitar para qualquer projeto web."' data-en='"Delivers exactly what he promises, with quality and on time. I recommend him without hesitation for any web project."'>"Entrega exatamente o que promete, com qualidade e dentro do prazo. Recomendo sem hesitar para qualquer projeto web."</p>
+        <p class="testimonial-author">— Cliente A</p>
+        <p class="testimonial-role" data-pt="Projeto Web, 2024" data-en="Web Project, 2024">Projeto Web, 2024</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text" data-pt='"Trabalhou com muita atenção ao detalhe. O resultado final superou as expectativas em termos de design e funcionalidade."' data-en='"Worked with great attention to detail. The final result exceeded expectations in both design and functionality."'>"Trabalhou com muita atenção ao detalhe. O resultado final superou as expectativas em termos de design e funcionalidade."</p>
+        <p class="testimonial-author">— Cliente B</p>
+        <p class="testimonial-role" data-pt="Landing Page, 2024" data-en="Landing Page, 2024">Landing Page, 2024</p>
+      </div>
+    </div>
+    <div class="submit-testimonial reveal" style="margin-top:3rem">
+      <h3 id="testimonial-form-title" data-pt="// deixar depoimento" data-en="// leave a testimonial">// deixar depoimento</h3>
+      <input type="text" class="form-field" id="t-name" data-pt-placeholder="O teu nome" data-en-placeholder="Your name" placeholder="O teu nome">
+      <input type="text" class="form-field" id="t-role" data-pt-placeholder="Empresa / projeto" data-en-placeholder="Company / project" placeholder="Empresa / projeto">
+      <textarea class="form-field" id="t-msg" data-pt-placeholder="O teu comentário..." data-en-placeholder="Your comment..." placeholder="O teu comentário..."></textarea>
+      <button class="btn-primary" onclick="submitTestimonial()" style="" data-pt="Enviar para aprovação /&gt;" data-en="Submit for approval /&gt;">Enviar para aprovação /&gt;</button>
+      <p id="t-feedback" style="font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--cyan);margin-top:.75rem;display:none"></p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div style="width:100%">
+    <p class="section-label reveal" data-pt="05 — contacto" data-en="05 — contact">05 — contacto</p>
+    <h2 class="section-title reveal" data-pt="Vamos construir algo." data-en="Let's build something.">Vamos construir algo.</h2>
+    <div class="contact-grid">
+      <div class="terminal-contact reveal">
+        <div class="terminal-bar">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line"><span class="prompt">cxi5@dev:~$</span> whoami</div>
+          <div class="terminal-line"><span class="output">Leonardo Sebastião // Cxi5</span></div>
+          <div class="terminal-line">&nbsp;</div>
+          <div class="terminal-line"><span class="prompt">cxi5@dev:~$</span> cat contact.txt</div>
+          <div class="terminal-line"><span class="output">email: <a href="mailto:leosebastiao25@gmail.com">leosebastiao25@gmail.com</a></span></div>
+          <div class="terminal-line"><span class="output">whatsapp: <a href="https://wa.me/244972445044" target="_blank" class="wa-text-link" data-pt="envia mensagem" data-en="send message">envia mensagem</a></span></div>
+          <div class="terminal-line"><span class="output">github: <a href="https://github.com/cxi5" target="_blank">github.com/cxi5</a></span></div>
+          <div class="terminal-line"><span class="output">codepen: <a href="https://codepen.io/cxi5" target="_blank">codepen.io/cxi5</a></span></div>
+          <div class="terminal-line"><span class="output">x: <a href="https://x.com/cx50z" target="_blank">x.com/cx50z</a></span></div>
+          <div class="terminal-line"><span class="output">ko-fi: <a href="https://ko-fi.com/cxi50" target="_blank">ko-fi.com/cxi50</a></span></div>
+          <div class="terminal-line">&nbsp;</div>
+          <div class="terminal-line"><span class="prompt">cxi5@dev:~$</span> <span style="display:inline-block;width:8px;height:14px;background:var(--cyan);vertical-align:middle;animation:blink .9s step-end infinite"></span></div>
+        </div>
+      </div>
+      <div class="social-links reveal">
+        <a href="mailto:leosebastiao25@gmail.com" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="#5A6A8A" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          leosebastiao25@gmail.com
+        </a>
+        <!-- WhatsApp: texto linkado, número oculto -->
+        <a href="https://wa.me/244972445044" target="_blank" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="#5A6A8A"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a13 13 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-pt="Fala comigo no WhatsApp" data-en="Chat with me on WhatsApp">Fala comigo no WhatsApp</span>
+        </a>
+        <a href="https://github.com/cxi5" target="_blank" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="#5A6A8A"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          github.com/cxi5
+        </a>
+        <a href="https://codepen.io/cxi5" target="_blank" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="#5A6A8A" stroke-width="1.5"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/><polyline points="2 15.5 12 8.5 22 15.5"/><line x1="12" y1="2" x2="12" y2="8.5"/></svg>
+          codepen.io/cxi5
+        </a>
+        <a href="https://x.com/cx50z" target="_blank" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="#5A6A8A"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          x.com/cx50z
+        </a>
+        <a href="https://ko-fi.com/cxi50" target="_blank" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="#5A6A8A" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          ko-fi.com/cxi50
+        </a>
+        <a href="https://vimeo.com/user260400406" target="_blank" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="#5A6A8A" stroke-width="1.5"><path d="M22 7.42c-.09 2.01-1.5 4.76-4.22 8.26C14.97 19.35 12.6 21.1 10.6 21.1c-1.23 0-2.27-1.13-3.12-3.4L5.97 12.4C5.37 10.13 4.72 9 4.02 9c-.15 0-.69.32-1.61.96L1 8.72c1.01-.89 2.01-1.78 2.99-2.67 1.35-1.17 2.36-1.78 3.04-1.83 1.6-.15 2.58.94 2.96 3.27.4 2.5.68 4.06.84 4.66.47 2.12.98 3.18 1.55 3.18.44 0 1.1-.69 1.98-2.08.88-1.39 1.35-2.44 1.41-3.17.13-1.2-.35-1.8-1.41-1.8-.5 0-1.02.11-1.55.35.97-3.19 2.84-4.74 5.6-4.67 2.04.05 3 1.38 2.89 3.97z"/></svg>
+          vimeo.com/cxi5
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CENA 3D INTERATIVA FINAL -->
+<div id="scene3d-section">
+  <p class="scene3d-label" data-pt="// universo técnico — arrasta para rodar" data-en="// tech universe — drag to rotate">// universo técnico — arrasta para rodar</p>
+  <canvas id="scene3d-canvas"></canvas>
+  <p class="scene3d-hint" data-pt="← arrasta · scroll para zoom →" data-en="← drag · scroll to zoom →">← arrasta · scroll para zoom →</p>
+</div>
+
+</main>
+
+<footer>
+  <p data-pt="Desenhado &amp; construído por <span>Cxi5</span> — Leonardo Sebastião &nbsp;·&nbsp; <span>2026</span> 🇦🇴" data-en="Designed &amp; built by <span>Cxi5</span> — Leonardo Sebastião &nbsp;·&nbsp; <span>2026</span> 🇦🇴">
+    Desenhado &amp; construído por <span>Cxi5</span> — Leonardo Sebastião &nbsp;·&nbsp; <span>2026</span> 🇦🇴
+  </p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
