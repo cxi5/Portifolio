@@ -4,11 +4,22 @@
 
   <url>
     <loc>https://cxi5.site.je/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pt" href="https://cxi5.site.je/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://cxi5.site.je/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cxi5.site.je/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cxi5.site.je/"/>
+  </url>
+
+  <url>
+    <loc>https://cxi5.site.je/en/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://cxi5.site.je/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cxi5.site.je/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cxi5.site.je/"/>
   </url>
 
 </urlset>

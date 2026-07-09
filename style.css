@@ -186,6 +186,8 @@ section { min-height:100vh; display:flex; align-items:center; }
 .project-desc { font-size:.9rem; color:var(--text); line-height:1.7; margin-bottom:1.25rem; }
 .project-tags { display:flex; flex-wrap:wrap; gap:.5rem; }
 .project-tag { font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--cyan); background:rgba(0,217,245,.05); border:1px solid rgba(0,217,245,.15); padding:.2rem .6rem; border-radius:3px; }
+.project-impact { font-family:'JetBrains Mono',monospace; font-size:.75rem; color:var(--cyan); margin-bottom:1.25rem; display:flex; align-items:flex-start; gap:.4rem; opacity:.9; }
+.project-impact::before { content:'↳'; opacity:.6; flex-shrink:0; }
 
 /* TESTIMONIALS */
 .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; width:100%; margin-top:2rem; }

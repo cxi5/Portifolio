@@ -10,7 +10,9 @@ applyWaLinks();
 
 // TRADUÇÃO PT / EN
 
-let currentLang = 'pt';
+let currentLang = document.documentElement.getAttribute('data-lang') || 'pt';
+const langLabelEl = document.getElementById('lang-label');
+if (langLabelEl) langLabelEl.textContent = currentLang === 'pt' ? 'EN' : 'PT';
 function toggleLang() {
   currentLang = currentLang === 'pt' ? 'en' : 'pt';
   document.getElementById('lang-label').textContent = currentLang === 'pt' ? 'EN' : 'PT';
