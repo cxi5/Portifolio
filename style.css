@@ -176,18 +176,69 @@ section { min-height:100vh; display:flex; align-items:center; }
 .skill-label { overflow:hidden; white-space:nowrap; display:inline-block; }
 
 /* PROJECTS */
-.projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:1.5rem; width:100%; margin-top:2rem; }
-.project-card { background:var(--card); border:1px solid rgba(0,217,245,.08); border-radius:8px; padding:1.75rem; position:relative; overflow:hidden; transition:border-color .3s,transform .3s,box-shadow .3s; }
-.project-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,var(--purple),var(--cyan)); transform:scaleX(0); transition:transform .3s; }
-.project-card:hover { border-color:rgba(0,217,245,.25); transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.4); }
-.project-card:hover::before { transform:scaleX(1); }
+.projects-title-row { display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1.25rem; width:100%; margin-bottom:0; }
+.projects-title-row .section-title { margin-bottom:0; }
+.view-all-link, .back-link { font-family:'JetBrains Mono',monospace; font-size:.8rem; color:var(--cyan); text-decoration:none; display:inline-flex; align-items:center; gap:.4rem; border:1px solid rgba(0,217,245,.3); padding:.55rem 1.1rem; border-radius:30px; transition:background .2s,color .2s,border-color .2s; white-space:nowrap; }
+.view-all-link:hover, .back-link:hover { background:var(--cyan); color:var(--deep); }
+
+.projects-carousel-wrap { position:relative; width:100%; margin-top:2.5rem; }
+.projects-carousel { display:flex; gap:1.5rem; width:100%; overflow-x:auto; scroll-snap-type:x proximity; scroll-padding-left:2px; padding-bottom:1.5rem; scrollbar-width:thin; scrollbar-color:rgba(0,217,245,.25) transparent; cursor:grab; }
+.projects-carousel:active,.projects-carousel.dragging { cursor:grabbing; }
+.projects-carousel.dragging .project-card a,
+.projects-carousel.dragging .project-card { pointer-events:none; }
+.projects-carousel::-webkit-scrollbar { height:6px; }
+.projects-carousel::-webkit-scrollbar-thumb { background:rgba(0,217,245,.25); border-radius:99px; }
+.projects-carousel:focus-visible { outline:2px solid var(--cyan); outline-offset:6px; }
+.projects-carousel .project-card { flex:0 0 300px; scroll-snap-align:start; }
+@media(max-width:1024px) and (min-width:769px){ .projects-carousel .project-card { flex:0 0 270px; } }
+@media(max-width:768px){ .projects-carousel .project-card { flex:0 0 78vw; } }
+@media(max-width:380px){ .projects-carousel .project-card { flex:0 0 86vw; } .project-card-body{ padding:1.4rem; } }
+
+/* fade nas bordas — sinaliza que há mais conteúdo pra rolar */
+.projects-carousel-wrap::before,.projects-carousel-wrap::after { content:''; position:absolute; top:0; bottom:1.5rem; width:36px; pointer-events:none; z-index:2; transition:opacity .25s; }
+.projects-carousel-wrap::before { left:0; background:linear-gradient(90deg,var(--deep),transparent); opacity:0; }
+.projects-carousel-wrap::after { right:0; background:linear-gradient(270deg,var(--deep),transparent); opacity:1; }
+.projects-carousel-wrap:not(.at-start)::before { opacity:1; }
+.projects-carousel-wrap.at-end::after { opacity:0; }
+
+/* setas — só em ecrãs com espaço; em touch o swipe nativo já resolve */
+.carousel-arrow { position:absolute; top:42%; transform:translateY(-50%); width:40px; height:40px; border-radius:50%; background:var(--card); border:1px solid rgba(0,217,245,.3); color:var(--cyan); font-size:1.2rem; line-height:1; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:3; transition:background .2s,color .2s,opacity .2s; }
+.carousel-arrow:hover { background:var(--cyan); color:var(--deep); }
+.carousel-arrow:focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
+.carousel-arrow[disabled] { opacity:.2; pointer-events:none; }
+.carousel-arrow.prev { left:-8px; } .carousel-arrow.next { right:-8px; }
+@media(max-width:900px){ .carousel-arrow { display:none; } }
+
+.project-card { background:var(--card); border:1px solid rgba(0,217,245,.08); border-radius:8px; position:relative; overflow:hidden; transition:border-color .3s,transform .3s,box-shadow .3s; }
+.project-card::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,var(--purple),var(--cyan)); transform:scaleX(0); transition:transform .3s; z-index:1; }
+@media (hover:hover) and (pointer:fine) {
+  .project-card:hover { border-color:rgba(0,217,245,.25); transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.4); }
+  .project-card:hover::before { transform:scaleX(1); }
+}
+.project-card:focus-within { border-color:rgba(0,217,245,.25); }
+.project-card:focus-within::before { transform:scaleX(1); }
+.project-card-body { padding:1.75rem; }
+.project-image { width:100%; aspect-ratio:16/10; position:relative; overflow:hidden; background:linear-gradient(135deg,var(--purple),var(--surface) 70%); display:flex; align-items:center; justify-content:center; }
+.project-image::after { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(0,217,245,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,217,245,.06) 1px,transparent 1px); background-size:16px 16px; }
+.project-image-initials { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:2.2rem; color:rgba(240,246,255,.18); letter-spacing:.05em; position:relative; z-index:1; }
+.project-image img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; position:relative; z-index:1; }
 .project-num { font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--muted); margin-bottom:1rem; }
 .project-name { font-size:1.2rem; font-weight:600; color:var(--white); margin-bottom:.75rem; }
 .project-desc { font-size:.9rem; color:var(--text); line-height:1.7; margin-bottom:1.25rem; }
 .project-tags { display:flex; flex-wrap:wrap; gap:.5rem; }
 .project-tag { font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--cyan); background:rgba(0,217,245,.05); border:1px solid rgba(0,217,245,.15); padding:.2rem .6rem; border-radius:3px; }
+.project-link { display:inline-block; margin-top:1rem; text-decoration:none; color:var(--cyan); border-color:rgba(0,217,245,.3); }
 .project-impact { font-family:'JetBrains Mono',monospace; font-size:.75rem; color:var(--cyan); margin-bottom:1.25rem; display:flex; align-items:flex-start; gap:.4rem; opacity:.9; }
 .project-impact::before { content:'↳'; opacity:.6; flex-shrink:0; }
+
+/* PROJECTS — FULL PAGE (projetos.html) */
+.projects-full-list { display:flex; flex-direction:column; gap:2rem; width:100%; }
+.projects-full-list .project-card { display:grid; grid-template-columns:280px 1fr; }
+.projects-full-list .project-image { aspect-ratio:auto; height:100%; }
+@media(max-width:1024px) and (min-width:769px){ .projects-full-list .project-card { grid-template-columns:220px 1fr; } }
+@media(max-width:768px){ .projects-full-list .project-card { grid-template-columns:1fr; } .projects-full-list .project-image { aspect-ratio:2.1/1; } }
+.projects-page-hero { padding:7rem 10vw 1rem; }
+.projects-page-list-wrap { padding:1rem 10vw 6rem; }
 
 /* TESTIMONIALS */
 .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; width:100%; margin-top:2rem; }
@@ -254,4 +305,52 @@ footer span { color:var(--cyan); }
   #hero { padding:0 6vw; }
   #about,#skills,#projects,#testimonials,#contact { padding:4rem 6vw; }
   #lang-btn { top:1rem; right:1rem; }
+  .projects-page-hero { padding:6rem 6vw 1rem; }
+  .projects-page-list-wrap { padding:1rem 6vw 4rem; }
 }
+
+/* PROJECT DESCRIPTION BUTTON */
+.project-desc-btn { display:inline-flex; align-items:center; gap:.4rem; margin-top:.75rem; padding:.5rem 1rem; background:transparent; border:1px solid rgba(0,217,245,.2); border-radius:4px; color:var(--cyan); font-family:'JetBrains Mono',monospace; font-size:.75rem; letter-spacing:.03em; cursor:pointer; transition:background .2s,border-color .2s; }
+.project-desc-btn:hover { background:rgba(0,217,245,.08); border-color:rgba(0,217,245,.4); }
+.pdb-chevron { transition:transform .25s ease; font-size:.7rem; }
+.project-desc-btn.open .pdb-chevron { transform:rotate(180deg); }
+
+/* PROJECT MODAL */
+.project-modal-overlay { position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center; padding:5vh 5vw; background:rgba(6,10,20,.75); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); opacity:0; visibility:hidden; transition:opacity .25s ease,visibility 0s linear .25s; }
+.project-modal-overlay.open { opacity:1; visibility:visible; transition:opacity .25s ease,visibility 0s linear 0s; }
+.project-modal { position:relative; width:min(680px,100%); max-height:85vh; overflow-y:auto; background:var(--card); border:1px solid rgba(0,217,245,.15); border-radius:8px; padding:2.25rem; transform:translateY(16px); transition:transform .25s ease; }
+.project-modal-overlay.open .project-modal { transform:translateY(0); }
+.project-modal-close { position:absolute; top:1rem; right:1rem; width:2rem; height:2rem; display:flex; align-items:center; justify-content:center; background:transparent; border:1px solid rgba(255,255,255,.1); border-radius:4px; color:var(--muted); font-size:1.1rem; line-height:1; cursor:pointer; transition:color .2s,border-color .2s; }
+.project-modal-close:hover { color:var(--white); border-color:rgba(0,217,245,.3); }
+.project-modal-title { font-size:1.4rem; font-weight:700; color:var(--white); margin-bottom:1.25rem; padding-right:2rem; }
+.project-modal-body { font-size:.9rem; color:var(--text); line-height:1.8; }
+.project-modal-body p { margin-bottom:1rem; }
+.project-modal-body h4 { font-size:.95rem; color:var(--white); margin:1.25rem 0 .5rem; }
+.project-modal-body ul { padding-left:1.2rem; margin-bottom:1rem; }
+.project-modal-body li { margin-bottom:.4rem; }
+body.modal-open { overflow:hidden; }
+
+/* MOOD POR PROJETO — o modal muda de tom consoante o projeto aberto,
+   em vez do site inteiro partilhar sempre a mesma paleta ciano. */
+.project-modal { border-top:3px solid rgba(0,217,245,.4); transition:border-color .2s ease; }
+
+/* NexDoc — neutro/corporativo (tons de azul-acinzentado, documentos/legal) */
+.project-modal.mood-nexdoc { border-top-color:#6E85A6; }
+.project-modal.mood-nexdoc .project-modal-title { color:#A9BBD4; }
+.project-modal.mood-nexdoc .project-modal-close:hover { border-color:rgba(110,133,166,.4); color:#A9BBD4; }
+
+/* LuxeStay — quente/dourado (luxo, hotelaria) */
+.project-modal.mood-luxestay { border-top-color:#D9A857; }
+.project-modal.mood-luxestay .project-modal-title { color:#E0B96E; }
+.project-modal.mood-luxestay .project-modal-close:hover { border-color:rgba(217,168,87,.4); color:#E0B96E; }
+
+/* Soft Soluções — técnico (verde, assistência técnica/redes) */
+.project-modal.mood-softsolucoes { border-top-color:#34D399; }
+.project-modal.mood-softsolucoes .project-modal-title { color:#6EE7B7; }
+.project-modal.mood-softsolucoes .project-modal-close:hover { border-color:rgba(52,211,153,.4); color:#6EE7B7; }
+
+/* Guia do Terminal — mantém o ciano de assinatura do site (é literalmente sobre o terminal) */
+.project-modal.mood-terminal { border-top-color:var(--cyan); }
+.project-modal.mood-terminal .project-modal-title { color:var(--cyan); }
+
+@media(max-width:480px) { .project-modal { padding:1.5rem; } }

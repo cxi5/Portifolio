@@ -22,4 +22,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cxi5.site.je/"/>
   </url>
 
+  <url>
+    <loc>https://cxi5.site.je/projetos.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://cxi5.site.je/projetos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cxi5.site.je/en/projetos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cxi5.site.je/projetos.html"/>
+  </url>
+
+  <url>
+    <loc>https://cxi5.site.je/en/projetos.html</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://cxi5.site.je/projetos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cxi5.site.je/en/projetos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cxi5.site.je/projetos.html"/>
+  </url>
+
 </urlset>

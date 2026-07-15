@@ -1,64 +1,66 @@
-## Cxi5 — Portfolio |
+# Portfolio — Leonardo Sebastião Cxi5
 
-### Visão Geral
+Site pessoal estático, bilingue (PT/EN), sem framework e sem build step —
+HTML puro servido diretamente. Apresenta quem sou, a stack que uso e os
+projetos que construí.
 
-O portfólio de **Leonardo Sebastião (Cxi5)** é um site pessoal de desenvolvedor front-end. Funciona como carta de apresentação profissional, vitrine de projetos e canal de contacto direto para freelance. É uma SPA (Single Page Application) em HTML, CSS e JavaScript vanilla, com animações, internacionalização PT/EN, cena 3D interativa e efeitos visuais de identidade técnica.
+**🔗 Live:** [cxi5.site.je](https://cxi5.site.je/)
 
-#### Loader de Entrada
-Ecrã de carregamento animado com o alias **Cxi5** em destaque, texto "Initializing..." e barra de progresso — cria uma primeira impressão técnica e imersiva antes de revelar o conteúdo.
+![preview](og-image.png)
 
-#### Navegação (Dock)
-Barra de navegação lateral ou inferior com 6 itens linkados por âncora: `// início`, `// sobre`, `// skills`, `// projetos`, `// depoimentos`, `// contacto`. Destaca a secção activa durante o scroll. Suporte i18n completo (PT/EN).
+---
 
-#### Botão de Idioma
-Botão flutuante `🌐 EN / PT` no canto superior que comuta toda a interface instantaneamente entre Português e Inglês sem recarregar a página.
+## Páginas
 
-#### 01 — Hero
-Secção de entrada com:
-- **Eyebrow** — "Disponível para projetos freelance"
-- **Nome com efeito glitch** — "Leonardo" com animação CSS de distorção digital, "Sebastião" em ciano
-- **Alias** — "Cxi5" em tipografia destacada
-- **Typewriter animado** — texto rotativo que exibe as tecnologias do stack (HTML, CSS, JavaScript, React…) simulando digitação em tempo real
-- **CTAs** — botão verde WhatsApp e botão ghost "entrar em contacto"
-- **Indicador de scroll** — linha vertical animada com label "ROLAR / SCROLL"
+- `index.html` — página principal: hero, secção "Quem sou" (com um bloco de
+  código `class Cxi5 {}` como assinatura), stack e carrossel com os 4
+  projetos em destaque.
+- `projetos.html` — lista completa dos projetos, com descrição curta,
+  tags de tecnologia, link para o projeto ao vivo e um botão "Ver descrição
+  do projeto" que abre um modal com a descrição completa.
+- `en/index.html`, `en/projetos.html` — versões em inglês das páginas
+  acima (conteúdo próprio, não é tradução automática).
+- `sitemap.xml` — mapa do site com as páginas PT/EN e as respetivas
+  hreflang alternates.
+- `google2493e96d81cc9262.html` — ficheiro de verificação de propriedade
+  do Google Search Console.
 
-#### 02 — Sobre Mim
-Apresentação pessoal em dois blocos:
+## Stack
 
-**Texto** — 4 parágrafos que cobrem: identidade (Leonardo / Cxi5), foco técnico (HTML, CSS, JS, React), experiência (3 anos, projetos reais), disponibilidade para freelance e links para GitHub, CodePen e Ko-fi.
+Sem framework e sem build step — cada página é um `.html` autossuficiente:
 
-**Code Block animado** — snippet `class Cxi5 {}` com syntax highlighting simulado, exibindo em pseudo-código o `constructor()` com nome, alias, localização, role e `available: true`, o método `stack()` com as tecnologias, e o método `projects()` listando os 4 projetos actuais: Tunerise, StayOS, NexDoc e Soft Soluções.
+- **HTML5 + CSS3** (`style.css`, partilhado por todas as páginas)
+- **JavaScript vanilla** (`main.js`, partilhado por todas as páginas)
+- **Google Fonts** (Space Grotesk + JetBrains Mono)
 
-#### 03 — Skills
-Grid de ícones SVG representando as tecnologias do stack com labels. Inclui HTML5, CSS3, JavaScript, React, Node.js, PHP, MySQL, Tailwind, Git e PWA. Visual limpo com ícones coloridos das tecnologias reais.
+## Funcionalidades (JS)
 
-#### 04 — Projetos
-Grid de cards de projeto, cada um com número sequencial, nome, descrição técnica real, tags de tecnologias e link "Ver projeto →". Estrutura actual:
+- **Tradução PT/EN** — troca instantânea de idioma via atributos
+  `data-pt`/`data-en` em cada elemento, sem reload nem biblioteca de i18n.
+- **Modal de descrição de projeto** — cada card em `projetos.html` tem um
+  botão que abre um modal com a descrição completa do projeto (foco preso,
+  fecho por `Esc`, clique fora ou botão). O botão e o modal existem
+  **apenas** em `projetos.html`/`en/projetos.html` — no `index.html` os
+  cards do carrossel ficam sem essa opção, para não expor um submenu
+  expansível na página inicial.
+- **Mood por projeto** — o modal muda de cor de destaque consoante o
+  projeto aberto (NexDoc em azul-acinzentado neutro, LuxeStay em dourado
+  quente, Soft Soluções em verde técnico, Guia do Terminal no ciano de
+  assinatura do site), em vez de toda a página partilhar sempre a mesma
+  paleta.
+- **Animação matrix** de fundo na secção "Quem sou", via `<canvas>`,
+  pausada automaticamente quando a aba não está visível
+  (`visibilitychange`) para poupar performance.
+- **Carrossel de projetos** no `index.html`, navegável por setas, arrasto
+  ou teclado.
+- **Animações de entrada ("reveal") ao scroll**, via `IntersectionObserver`.
+- **Links de WhatsApp ofuscados** — o número é guardado em base64 e só é
+  decodificado no browser, para dificultar a recolha automática por bots.
 
-**001 — Tunerise** — Plataforma social para músicos independentes africanos. Feed, perfis, descoberta de artistas, sistema de publicações. Stack: PHP, MySQL, HTML/CSS, JavaScript. Sem link externo activo (em desenvolvimento).
+## SEO
 
-**002 — NexDoc** — Plataforma de gestão documental e legal com redação inteligente de contratos, assinatura digital, arquivo seguro e painel de acompanhamento para escritórios de advocacia e PMEs. Stack: React, Node.js, PDF.js, MySQL. Link activo: `cxi5.github.io/nexdoc`.
-
-**003 — StayOS** — PWA de experiência hoteleira de luxo — portal do hóspede com reservas em tempo real, galeria interactiva com lightbox, serviços in-room, gestão de estadias, sistema de avaliações, suporte offline e instalável no homescreen. Stack: JavaScript, PWA, HTML/CSS, i18n. Link activo: `cxi5.github.io/Luxury-Residences`.
-
-**004 — Soft Soluções** — Site institucional para empresa de assistência técnica em Luanda. Cobre desbloqueio FRP/IMEI, reparação mobile, câmeras CCTV, redes Wi-Fi, manutenção de PC e criação de sites. Design dark com SEO local, Schema.org, Open Graph e contacto via WhatsApp. Stack: HTML/CSS, JavaScript, SEO, PWA. Sem link externo activo.
-
-**··· — Próximo Projecto** — Card com borda tracejada e estilo muted, com CTA verde de WhatsApp para quem tiver uma ideia de projeto.
-
-#### 05 — Depoimentos
-Dois cards de testemunhos reais de clientes (Mendes Augusto — Projeto Web 2025; Filomena Andrade — Landing Page 2024) com texto e identificação do projeto.
-
-**Formulário de submissão** — campos: Nome, Empresa/Projeto, Comentário, e botão "Enviar para aprovação" integrado com EmailJS para envio real por email.
-
-#### 06 — Contacto
-Layout em dois blocos:
-
-**Terminal interativo** — janela de terminal com barra de semáforo (dots vermelho/amarelo/verde), comandos `whoami` e `cat contact.txt` que revelam identidade e todos os contactos: email, WhatsApp, GitHub, CodePen, X (Twitter), Ko-fi.
-
-**Links sociais** — lista vertical com ícones SVG linkados para: email, WhatsApp, GitHub, CodePen, X, Ko-fi, Vimeo.
-
-#### Cena 3D Final
-Elemento diferenciador: canvas WebGL com **Three.js** exibindo um universo técnico 3D interativo. O utilizador pode arrastar para rodar e usar scroll para zoom. Label: *"// universo técnico — arrasta para rodar"*.
-
-#### Footer
-Linha de rodapé: *"Desenhado & construído por Cxi5 — Leonardo Sebastião · 2026 🇦🇴"*
+- Meta tags completas (description, keywords, robots)
+- Open Graph e Twitter Card, com `og-image.png` próprio
+- Tags `hreflang` para as versões PT/EN
+- `sitemap.xml` e ficheiro de verificação do Google Search Console
+- Favicons em múltiplos formatos (`.ico`, `.png` 16/32, apple-touch-icon)

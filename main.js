@@ -31,6 +31,54 @@ function toggleLang() {
   }
 }
 
+// MODAL — descrição completa de projeto
+const projectModalOverlay = document.getElementById('project-modal-overlay');
+const projectModalBox = projectModalOverlay ? projectModalOverlay.querySelector('.project-modal') : null;
+const projectModalTitle = document.getElementById('project-modal-title');
+const projectModalBody = document.getElementById('project-modal-body');
+let lastFocusedBtn = null;
+
+// Cada projeto tem um "mood" próprio no modal (cor de destaque),
+// em vez do site inteiro partilhar sempre a mesma paleta.
+const PROJECT_MOODS = ['nexdoc', 'luxestay', 'softsolucoes', 'terminal'];
+
+function openProjectModal(id, btnEl) {
+  const source = document.getElementById('detail-' + id);
+  if (!source || !projectModalOverlay) return;
+  lastFocusedBtn = btnEl || null;
+  const ptBlock = source.querySelector('[data-lang="pt"]');
+  const enBlock = source.querySelector('[data-lang="en"]');
+  projectModalTitle.setAttribute('data-pt', source.getAttribute('data-title-pt'));
+  projectModalTitle.setAttribute('data-en', source.getAttribute('data-title-en'));
+  projectModalTitle.innerHTML = currentLang === 'pt' ? source.getAttribute('data-title-pt') : source.getAttribute('data-title-en');
+  projectModalBody.setAttribute('data-pt', ptBlock ? ptBlock.innerHTML : '');
+  projectModalBody.setAttribute('data-en', enBlock ? enBlock.innerHTML : '');
+  projectModalBody.innerHTML = currentLang === 'pt' ? (ptBlock ? ptBlock.innerHTML : '') : (enBlock ? enBlock.innerHTML : '');
+  if (projectModalBox) {
+    PROJECT_MOODS.forEach(m => projectModalBox.classList.remove('mood-' + m));
+    if (PROJECT_MOODS.includes(id)) projectModalBox.classList.add('mood-' + id);
+  }
+  projectModalOverlay.classList.add('open');
+  document.body.classList.add('modal-open');
+}
+
+function closeProjectModal() {
+  if (!projectModalOverlay) return;
+  projectModalOverlay.classList.remove('open');
+  document.body.classList.remove('modal-open');
+  if (lastFocusedBtn) lastFocusedBtn.focus();
+}
+
+if (projectModalOverlay) {
+  projectModalOverlay.addEventListener('click', (e) => {
+    if (e.target === projectModalOverlay) closeProjectModal();
+  });
+  document.getElementById('project-modal-close')?.addEventListener('click', closeProjectModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectModalOverlay.classList.contains('open')) closeProjectModal();
+  });
+}
+
 // matrix
 
 const mc = document.getElementById('matrix-canvas');
@@ -71,17 +119,19 @@ let progress = 0; let ti = 0;
 const loaderBar = document.getElementById('loader-bar');
 const loaderText = document.getElementById('loader-text');
 const loader = document.getElementById('loader');
-const loaderInterval = setInterval(() => {
-  progress += Math.random()*18+5;
-  if (progress >= 100) progress = 100;
-  loaderBar.style.width = progress + '%';
-  if (ti < loaderTexts.length) loaderText.textContent = loaderTexts[ti++];
-  if (progress >= 100) {
-    clearInterval(loaderInterval);
-    setTimeout(() => loader.classList.add('fade-out'), 400);
-    setTimeout(() => loader.style.display = 'none', 1000);
-  }
-}, 200);
+if (loader && loaderBar && loaderText) {
+  const loaderInterval = setInterval(() => {
+    progress += Math.random()*18+5;
+    if (progress >= 100) progress = 100;
+    loaderBar.style.width = progress + '%';
+    if (ti < loaderTexts.length) loaderText.textContent = loaderTexts[ti++];
+    if (progress >= 100) {
+      clearInterval(loaderInterval);
+      setTimeout(() => loader.classList.add('fade-out'), 400);
+      setTimeout(() => loader.style.display = 'none', 1000);
+    }
+  }, 200);
+}
 
 // HERO — CHANGING WORD com typewriter letra a letra + fonte diferente
 
@@ -142,8 +192,59 @@ function cycleHeroWord() {
   });
 }
 
-// Inicia
-typeHeroWord(heroWords[0], () => { setTimeout(cycleHeroWord, 2200); });
+// Inicia (só em páginas com hero)
+if (heroDisplay) {
+  typeHeroWord(heroWords[0], () => { setTimeout(cycleHeroWord, 2200); });
+}
+
+// CARROSSEL DE PROJETOS — setas, arrastar com o rato, teclado, fade nas bordas
+document.querySelectorAll('.projects-carousel-wrap').forEach(wrap => {
+  const track = wrap.querySelector('.projects-carousel');
+  const prevBtn = wrap.querySelector('.carousel-arrow.prev');
+  const nextBtn = wrap.querySelector('.carousel-arrow.next');
+  if (!track) return;
+
+  function step() {
+    const card = track.querySelector('.project-card');
+    const gap = parseFloat(getComputedStyle(track).gap) || 24;
+    return card ? card.getBoundingClientRect().width + gap : 300;
+  }
+  function updateEdges() {
+    const atStart = track.scrollLeft < 8;
+    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+    wrap.classList.toggle('at-start', atStart);
+    wrap.classList.toggle('at-end', atEnd);
+    if (prevBtn) prevBtn.disabled = atStart;
+    if (nextBtn) nextBtn.disabled = atEnd;
+  }
+  prevBtn?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+  nextBtn?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+  track.addEventListener('scroll', updateEdges, { passive: true });
+  window.addEventListener('resize', updateEdges);
+  updateEdges();
+
+  // arrastar com o rato — só ponteiro fino; touch fica com o scroll nativo
+  let isDown = false, startX = 0, startScroll = 0, moved = false;
+  track.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse') return;
+    isDown = true; moved = false; startX = e.clientX; startScroll = track.scrollLeft;
+    track.classList.add('dragging');
+  });
+  window.addEventListener('pointermove', e => {
+    if (!isDown) return;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 4) moved = true;
+    track.scrollLeft = startScroll - dx;
+  });
+  window.addEventListener('pointerup', () => { isDown = false; track.classList.remove('dragging'); });
+  track.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+
+  // teclado — setas quando o carrossel está em foco
+  track.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { track.scrollBy({ left: step(), behavior: 'smooth' }); e.preventDefault(); }
+    if (e.key === 'ArrowLeft') { track.scrollBy({ left: -step(), behavior: 'smooth' }); e.preventDefault(); }
+  });
+});
 
 // SCROLL REVEAL
 
