@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Leonardo Sebastião (Cxi5) | Front-end Programmer Angola</title>
+  <meta name="description" content="All projects by Leonardo Sebastião, also known as Cxi5 — front-end developer and programmer in Luanda, Angola, building websites, platforms and landing pages." />
+  <meta name="keywords" content="leonardo sebastiao, cxi5, programmer angola, developer angola, build a website, landing page developer, programmer portfolio angola" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="theme-color" content="#0A0E1A" />
+  <link rel="canonical" href="https://cxi5.site.je/en/projetos.html" />
+  <link rel="alternate" hreflang="pt" href="https://cxi5.site.je/projetos.html" />
+  <link rel="alternate" hreflang="en" href="https://cxi5.site.je/en/projetos.html" />
+  <link rel="alternate" hreflang="x-default" href="https://cxi5.site.je/projetos.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="icon" href="../favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link" data-pt="Saltar para o conteúdo" data-en="Skip to content">Skip to content</a>
+
+<canvas id="matrix-canvas"></canvas>
+
+<!-- LANG BUTTON -->
+<button id="lang-btn" onclick="toggleLang()" aria-label="Alternar idioma / Switch language">
+  <span>🌐</span>
+  <span id="lang-label">PT</span>
+</button>
+
+<main id="main-content" style="display:block;">
+
+  <div class="projects-page-hero">
+    <a href="../index.html#projects" class="back-link reveal" data-pt="← voltar ao portfólio" data-en="← back to portfolio">← back to portfolio</a>
+    <p class="section-label reveal" style="margin-top:2rem" data-pt="03 — projetos" data-en="03 — projects">03 — projects</p>
+    <h1 class="section-title reveal" data-pt="Todos os projetos." data-en="All projects.">All projects.</h1>
+  </div>
+
+  <div class="projects-page-list-wrap">
+    <div class="projects-full-list">
+
+      <div class="project-card reveal">
+        <!-- placeholder: replace with real screenshot -->
+        <div class="project-image"><span class="project-image-initials">TR</span></div>
+        <div class="project-card-body">
+          <p class="project-num">001</p>
+          <h3 class="project-name">Tunerise</h3>
+          <p class="project-desc" data-pt="Plataforma social para músicos em desenvolvimento. Feed, perfis, descoberta de artistas e sistema de publicações." data-en="Social platform for musicians, currently in development. Feed, profiles, artist discovery and a posting system.">
+            Social platform for musicians, currently in development. Feed, profiles, artist discovery and a posting system.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">PHP</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">HTML/CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <span class="project-tag" style="display:inline-block;margin-top:1rem;color:var(--muted);border-color:rgba(255,255,255,.08);cursor:default" data-pt="Em breve" data-en="Coming soon">Coming soon</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <!-- placeholder: replace with real screenshot -->
+        <div class="project-image">
+          <img src="../img/projects/nexdoc-horizontal.webp" alt="NexDoc screenshot, legal document management platform" loading="lazy" decoding="async" width="1469" height="665">
+        </div>
+        <div class="project-card-body">
+          <p class="project-num">002</p>
+          <h3 class="project-name">NexDoc</h3>
+          <p class="project-desc" data-pt="Plataforma de gestão documental e legal, redação de contratos, assinatura digital, arquivo seguro e painel de acompanhamento processual para escritórios." data-en="Legal document management platform, contract drafting, digital signature, secure archiving and case-tracking dashboard for law firms.">
+            Legal document management platform, contract drafting, digital signature, secure archiving and case-tracking dashboard for law firms.
+          </p>
+          <p class="project-impact" data-pt="Em fase final de testes." data-en="In final testing.">In final testing.</p>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">PDF.js</span>
+            <span class="project-tag">Offline-first</span>
+          </div>
+          <a href="https://cxi5.github.io/nexdoc/" target="_blank" class="project-tag project-link" data-pt="Ver projeto →" data-en="View project →">View project →</a>
+          <button type="button" class="project-desc-btn" onclick="openProjectModal('nexdoc', this)">
+            <span data-pt="Ver descrição do projeto" data-en="View project description">View project description</span>
+            <span class="pdb-chevron">▾</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <!-- placeholder: replace with real screenshot -->
+        <div class="project-image">
+          <img src="../img/projects/luxestay-horizontal.webp" alt="LuxeStay screenshot, luxury hotel experience PWA" loading="lazy" decoding="async" width="1447" height="669">
+        </div>
+        <div class="project-card-body">
+          <p class="project-num">003</p>
+          <h3 class="project-name">LuxeStay</h3>
+          <p class="project-desc" data-pt="PWA de experiência hoteleira, portal do hóspede com reservas em tempo real, galeria interactiva, serviços in-room, gestão de estadias e sistema de avaliações. Suporte offline e instalável no homescreen." data-en="Hotel experience PWA, guest portal with real-time bookings, interactive gallery, in-room services, stay management and a review system. Offline support and installable on the homescreen.">
+            Hotel experience PWA, guest portal with real-time bookings, interactive gallery, in-room services, stay management and a review system. Offline support and installable on the homescreen.
+          </p>
+          <p class="project-impact" data-pt="Instalável como app." data-en="Installable as an app.">Installable as an app.</p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">PWA</span>
+            <span class="project-tag">HTML/CSS</span>
+            <span class="project-tag">i18n</span>
+          </div>
+          <a href="https://luxuryresidences.pages.dev/" target="_blank" class="project-tag project-link" data-pt="Ver projeto →" data-en="View project →">View project →</a>
+          <button type="button" class="project-desc-btn" onclick="openProjectModal('luxestay', this)">
+            <span data-pt="Ver descrição do projeto" data-en="View project description">View project description</span>
+            <span class="pdb-chevron">▾</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <!-- placeholder: replace with real screenshot -->
+        <div class="project-image">
+          <img src="../img/projects/softsolucoes-horizontal.webp" alt="Soft Soluções institutional website screenshot" loading="lazy" decoding="async" width="1459" height="659">
+        </div>
+        <div class="project-card-body">
+          <p class="project-num">004</p>
+          <h3 class="project-name">Soft Soluções</h3>
+          <p class="project-desc" data-pt="Site institucional para empresa de assistência técnica em Luanda — desbloqueio FRP/IMEI, reparação mobile, câmeras CCTV, redes Wi-Fi, PC e criação de sites. Design com SEO local, Schema.org, Open Graph e formulário de contacto via WhatsApp." data-en="Institutional website for a tech support company in Luanda — FRP/IMEI unlock, mobile repair, CCTV cameras, Wi-Fi networks, PC maintenance and website creation. Design with local SEO, Schema.org, Open Graph and WhatsApp contact form.">
+            Institutional website for a tech support company in Luanda — FRP/IMEI unlock, mobile repair, CCTV cameras, Wi-Fi networks, PC maintenance and website creation. Design with local SEO, Schema.org, Open Graph and WhatsApp contact form.
+          </p>
+          <p class="project-impact" data-pt="Site em produção, a receber clientes reais em Luanda." data-en="Live site, currently serving real clients in Luanda.">Live site, currently serving real clients in Luanda.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML/CSS</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">SEO</span>
+            <span class="project-tag">PWA</span>
+          </div>
+          <a href="https://softsolucoes.wuaze.com" target="_blank" class="project-tag project-link" data-pt="Ver projeto →" data-en="View project →">View project →</a>
+          <button type="button" class="project-desc-btn" onclick="openProjectModal('softsolucoes', this)">
+            <span data-pt="Ver descrição do projeto" data-en="View project description">View project description</span>
+            <span class="pdb-chevron">▾</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <!-- placeholder: replace with real screenshot -->
+        <div class="project-image">
+          <img src="../img/projects/terminal-horizontal.webp" alt="Terminal Guide interactive ebook screenshot" loading="lazy" decoding="async" width="1459" height="668">
+        </div>
+        <div class="project-card-body">
+          <p class="project-num">005</p>
+          <h3 class="project-name" data-pt="Guia do Terminal" data-en="Terminal Guide">Terminal Guide</h3>
+          <p class="project-desc" data-pt="Ebook gratuito e interactivo sobre o terminal Linux — 50 comandos explicados do básico ao avançado, organizados em 6 blocos temáticos, do iniciante ao especialista em linha de comando. Interface com índice lateral, modo claro/escuro e alternância PT/EN." data-en="Free interactive ebook about the Linux terminal — 50 commands explained from basics to advanced, organized into 6 thematic blocks, from beginner to command-line expert. Features a sidebar index, dark/light mode and PT/EN toggle.">
+            Free interactive ebook about the Linux terminal — 50 commands explained from basics to advanced, organized into 6 thematic blocks, from beginner to command-line expert. Features a sidebar index, dark/light mode and PT/EN toggle.
+          </p>
+          <p class="project-impact" data-pt="Recurso 100% gratuito, pensado para quem está a aprender a linha de comando do zero." data-en="100% free resource, built for people learning the command line from scratch.">100% free resource, built for people learning the command line from scratch.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML/CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <a href="https://cxi5.github.io/terminal-guide/" target="_blank" class="project-tag project-link" data-pt="Ver projeto →" data-en="View project →">View project →</a>
+          <button type="button" class="project-desc-btn" onclick="openProjectModal('terminal', this)">
+            <span data-pt="Ver descrição do projeto" data-en="View project description">View project description</span>
+            <span class="pdb-chevron">▾</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Card vazio intencional — abre WhatsApp -->
+      <div class="project-card reveal" style="border-style:dashed;border-color:rgba(0,217,245,0.15);">
+        <div class="project-card-body">
+          <p class="project-num">···</p>
+          <h3 class="project-name" style="color:var(--muted)" data-pt="Próximo projecto" data-en="Next project">Next project</h3>
+          <p class="project-desc" style="color:var(--muted)" data-pt="Tens uma ideia? Posso ser o developer que a vai transformar em realidade." data-en="Got an idea? I might be the developer to make it real.">Got an idea? I might be the developer to make it real.</p>
+          <div class="project-tags">
+            <a href="#" data-wa-link target="_blank" class="project-tag" style="text-decoration:none;color:#25D366;border-color:rgba(37,211,102,.3);" data-pt="💬 falar no WhatsApp →" data-en="💬 chat on WhatsApp →">💬 chat on WhatsApp →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p data-pt="Desenhado &amp; construído por <span>Cxi5</span> — Leonardo Sebastião &nbsp;·&nbsp; <span>2026</span> 🇦🇴" data-en="Designed &amp; built by <span>Cxi5</span> — Leonardo Sebastião &nbsp;·&nbsp; <span>2026</span> 🇦🇴">
+    Designed &amp; built by <span>Cxi5</span> — Leonardo Sebastião &nbsp;·&nbsp; <span>2026</span> 🇦🇴
+  </p>
+</footer>
+
+<!-- Full project content (for the "View project description" modal) -->
+<div id="project-details" hidden>
+  <div id="detail-nexdoc" data-title-pt="NexDoc" data-title-en="NexDoc">
+    <div data-lang="pt">
+      <p>O NexDoc é uma aplicação de gestão de contratos pensada para quem precisa de criar, assinar e arquivar documentos sem depender de conta ou de servidor — tudo funciona diretamente no browser.</p>
+      <p>Dá para começar um contrato do zero ou importar um ficheiro existente (TXT, HTML ou DOCX), editá-lo num editor de texto rico com formatação, títulos, listas e hiperligações, e depois assiná-lo à mão diretamente no ecrã. Cada documento fica selado com um hash SHA-256 que garante a integridade do conteúdo, e a exportação final é feita em PDF através do diálogo de impressão do browser.</p>
+      <h4>Funcionalidades principais</h4>
+      <ul>
+        <li>Gestão do ciclo de vida do contrato — rascunho, pendente de assinatura, assinado — com painel de estatísticas e arquivo pesquisável por estado, data ou valor.</li>
+        <li>Mais de 50 moedas de África, Europa, Américas e Ásia, com pesquisa por nome, código ou símbolo.</li>
+        <li>Alertas automáticos quando um contrato está a 7 dias ou menos de expirar.</li>
+        <li>Logótipo personalizado no cabeçalho dos PDFs.</li>
+        <li>Backup e restauro dos contratos em JSON.</li>
+        <li>Interface em quatro idiomas — Português, Inglês, Francês e Espanhol — e tema claro/escuro.</li>
+      </ul>
+      <h4>O que o torna diferente</h4>
+      <p>Corre inteiramente no browser e todos os dados ficam guardados no próprio dispositivo, sem passar por nenhum servidor externo. A importação de ficheiros DOCX depende de uma biblioteca carregada por CDN, por isso a primeira importação pode exigir ligação à internet.</p>
+      <h4>Limitações conhecidas</h4>
+      <ul>
+        <li>O editor ainda não suporta inserção de tabelas.</li>
+        <li>Sem gestos de swipe nem otimizações específicas para teclado virtual — o toque está implementado apenas no quadro de assinatura.</li>
+        <li>A exportação em PDF depende do diálogo de impressão nativo do browser, exigindo a escolha manual de "Guardar como PDF".</li>
+      </ul>
+    </div>
+    <div data-lang="en">
+      <p>NexDoc is a contract-management app built for creating, signing and archiving documents without needing an account or a server — everything runs directly in the browser.</p>
+      <p>You can start a contract from scratch or import an existing file (TXT, HTML or DOCX), edit it in a rich text editor with formatting, headings, lists and hyperlinks, then sign it by hand right on the screen. Every document is sealed with a SHA-256 hash that guarantees content integrity, and the final export is done as a PDF through the browser's print dialog.</p>
+      <h4>Key features</h4>
+      <ul>
+        <li>Full contract lifecycle management — draft, pending signature, signed — with a stats dashboard and a searchable archive filterable by status, date or value.</li>
+        <li>Over 50 currencies from Africa, Europe, the Americas and Asia, searchable by name, code or symbol.</li>
+        <li>Automatic alerts when a contract is 7 days or less from expiring.</li>
+        <li>Custom company logo on the PDF header.</li>
+        <li>Backup and restore of contracts as JSON.</li>
+        <li>Interface in four languages — Portuguese, English, French and Spanish — plus light/dark theme.</li>
+      </ul>
+      <h4>What makes it different</h4>
+      <p>Runs entirely in the browser, with all contract data stored on the device itself — nothing goes to an external server. DOCX import relies on a CDN-loaded library, so the first import may require an internet connection.</p>
+      <h4>Known limitations</h4>
+      <ul>
+        <li>The editor doesn't yet support inserting tables.</li>
+        <li>No swipe gestures or virtual-keyboard-specific optimizations — touch interaction is only implemented on the signature pad.</li>
+        <li>PDF export relies on the browser's native print dialog, requiring manually choosing "Save as PDF".</li>
+      </ul>
+    </div>
+  </div>
+  <div id="detail-luxestay" data-title-pt="LuxeStay" data-title-en="LuxeStay">
+    <div data-lang="pt">
+      <p>O LuxeStay é uma PWA de reservas de hotel com fluxo completo de descoberta, reserva e gestão de estadias — construída inteiramente em JavaScript vanilla e CSS, sem frameworks no frontend, com Supabase como backend.</p>
+      <p>O objetivo do projeto foi testar até onde é possível ir com HTML, CSS e JavaScript puros sem abrir mão de autenticação real, dados persistidos (quartos, avaliações, reservas) e um fluxo de reserva completo — da pesquisa ao pagamento simulado — tudo isto com interface bilingue PT/EN.</p>
+      <h4>Funcionalidades principais</h4>
+      <ul>
+        <li>Autenticação completa — registo, login, recuperação de senha, validação de idade mínima e força de senha.</li>
+        <li>Pesquisa e filtro de quartos por tipo, disponibilidade e favoritos.</li>
+        <li>Galeria de fotos por quarto com lightbox em ecrã inteiro.</li>
+        <li>Fluxo de reserva: seleção de datas → dados do hóspede → pagamento simulado (transferência bancária ou QR code) → confirmação.</li>
+        <li>Secção "Minhas Estadias" com histórico, cancelamento e estado vazio dedicado.</li>
+        <li>Avaliações por quarto, ligadas ao perfil do autor.</li>
+        <li>Interface bilingue PT/EN, com o conteúdo dos quartos traduzido diretamente na base de dados.</li>
+        <li>Instalável como app e funcional offline para páginas já visitadas.</li>
+      </ul>
+      <h4>O que o torna diferente</h4>
+      <p>Usa Supabase (Postgres + autenticação + Row Level Security) como backend, o que permitiu concentrar o tempo em UX e regras de negócio em vez de reconstruir autenticação e infraestrutura do zero. Todas as tabelas sensíveis têm políticas de RLS ativas, garantindo que cada utilizador só acede às suas próprias reservas — mesmo com a chave pública exposta no cliente.</p>
+      <p>É uma PWA instalável em vez de uma app nativa: um Service Worker aplica estratégias de cache diferentes por tipo de recurso (páginas em network-first, imagens em cache-first), cobrindo o caso de uso principal — revisitar o app com carregamento rápido — sem a complexidade de publicar em lojas de aplicações.</p>
+      <p>O pagamento é simulado (transferência bancária ou QR code fictício), já que o foco do projeto não é a integração real com um gateway de pagamentos.</p>
+    </div>
+    <div data-lang="en">
+      <p>LuxeStay is a hotel-booking PWA with a full discovery, booking and stay-management flow — built entirely in vanilla JavaScript and CSS, with no frontend framework, using Supabase as the backend.</p>
+      <p>The goal of the project was to see how far plain HTML, CSS and JavaScript could go without giving up real authentication, persisted data (rooms, reviews, bookings) and a complete booking flow — from search to mocked payment — all wrapped in a bilingual PT/EN interface.</p>
+      <h4>Key features</h4>
+      <ul>
+        <li>Full authentication — sign-up, login, password recovery, minimum-age validation and password strength checks.</li>
+        <li>Room search and filtering by type, date availability and favorites.</li>
+        <li>Photo gallery per room with a fullscreen lightbox.</li>
+        <li>Booking flow: date selection → guest details → mocked payment (bank transfer or QR code) → confirmation.</li>
+        <li>"My Stays" section with booking history, cancellation and a dedicated empty state.</li>
+        <li>Per-room reviews linked to the author's profile.</li>
+        <li>Bilingual PT/EN interface, with room content translated directly in the database.</li>
+        <li>Installable as an app and functional offline for already-visited pages.</li>
+      </ul>
+      <h4>What makes it different</h4>
+      <p>Uses Supabase (Postgres + auth + Row Level Security) as the backend, which kept the focus on UX and business logic instead of rebuilding authentication and infrastructure from scratch. Every sensitive table has active RLS policies, ensuring each user can only access their own bookings — even with the public key exposed on the client.</p>
+      <p>It's an installable PWA rather than a native app: a Service Worker applies different caching strategies per resource type (pages network-first, images cache-first), covering the main use case — revisiting the app with fast load times — without the complexity of publishing to app stores.</p>
+      <p>Payment is mocked (bank transfer or a fictional QR code), since real payment-gateway integration wasn't the goal of the project.</p>
+    </div>
+  </div>
+  <div id="detail-softsolucoes" data-title-pt="Soft Soluções" data-title-en="Soft Soluções">
+    <div data-lang="pt">
+      <p>Site institucional para a Soft Soluções LDA, empresa de assistência técnica em Luanda — desbloqueio FRP/IMEI, reparação mobile, câmaras CCTV, redes Wi-Fi, manutenção de PC e criação de sites. Multi-página, estático, sem back-end e sem build step: HTML puro servido diretamente.</p>
+      <h4>Páginas</h4>
+      <ul>
+        <li>Página principal — hero com CTA para WhatsApp, contadores animados, vídeo de demonstração, marcas suportadas, benefícios, "como funciona", resumo dos serviços e FAQ.</li>
+        <li>Serviços — detalhe de todos os serviços, agrupados em três blocos: Mobile &amp; Software, Segurança/Redes/Conectividade, e Informática Empresarial &amp; Web.</li>
+        <li>Blog — artigos publicados sobre desbloqueio FRP, Wi-Fi lento e otimização de PC, com dados estruturados Schema.org.</li>
+        <li>Contacto — cartões diretos para telefone, WhatsApp, e-mail e Instagram, sem formulário — todo o contacto é feito por links diretos.</li>
+      </ul>
+      <h4>Stack</h4>
+      <p>Sem framework e sem build step: cada página é um ficheiro HTML autossuficiente, com Tailwind CSS e Font Awesome carregados por CDN, Google Fonts e JavaScript vanilla inline em cada página.</p>
+      <h4>Funcionalidades</h4>
+      <ul>
+        <li>Menu mobile com toggle de ícone.</li>
+        <li>Acordeão de FAQ nativo, com rotação do ícone ao abrir/fechar.</li>
+        <li>Modal de vídeo com embed do YouTube, fechável por botão, clique fora ou tecla Esc.</li>
+        <li>Animações de entrada ao scroll e contadores numéricos animados, ambos via IntersectionObserver.</li>
+      </ul>
+      <h4>SEO</h4>
+      <p>Meta tags completas, geolocalização para Luanda/Angola, Open Graph, Twitter Card, dados estruturados LocalBusiness (Schema.org) com telefone, e-mail, horário e morada, sitemap.xml e URLs canónicas em todas as páginas.</p>
+      <p>Site em produção, atualmente a receber clientes reais em Luanda.</p>
+    </div>
+    <div data-lang="en">
+      <p>Institutional website for Soft Soluções LDA, a tech support company in Luanda — FRP/IMEI unlocking, mobile repair, CCTV cameras, Wi-Fi networks, PC maintenance and website creation. Multi-page, static, no back-end and no build step: plain HTML served directly.</p>
+      <h4>Pages</h4>
+      <ul>
+        <li>Homepage — hero with a WhatsApp CTA, animated counters, demo video, supported brands, benefits, "how it works", a services summary and FAQ.</li>
+        <li>Services — full detail of every service, grouped into three blocks: Mobile &amp; Software, Security/Networks/Connectivity, and Business &amp; Web IT.</li>
+        <li>Blog — published articles on FRP unlocking, slow Wi-Fi and PC optimization, with Schema.org structured data.</li>
+        <li>Contact — direct cards for phone, WhatsApp, email and Instagram, no form — all contact happens through direct links.</li>
+      </ul>
+      <h4>Stack</h4>
+      <p>No framework and no build step: each page is a self-contained HTML file, with Tailwind CSS and Font Awesome loaded via CDN, Google Fonts and inline vanilla JavaScript on every page.</p>
+      <h4>Features</h4>
+      <ul>
+        <li>Mobile menu with icon toggle.</li>
+        <li>Native FAQ accordion, with the chevron icon rotating on open/close.</li>
+        <li>Video modal with a YouTube embed, closable by button, outside click or Esc key.</li>
+        <li>Scroll-triggered reveal animations and animated numeric counters, both via IntersectionObserver.</li>
+      </ul>
+      <h4>SEO</h4>
+      <p>Full meta tags, geo-targeting for Luanda/Angola, Open Graph, Twitter Card, LocalBusiness structured data (Schema.org) with phone, email, hours and address, sitemap.xml and canonical URLs on every page.</p>
+      <p>Live site, currently serving real clients in Luanda.</p>
+    </div>
+  </div>
+  <div id="detail-terminal" data-title-pt="Guia do Terminal" data-title-en="Terminal Guide">
+    <div data-lang="pt">
+      <p>Um ebook interativo em HTML, CSS e JavaScript — sem frameworks, sem build step — que ensina o terminal Linux a partir do zero. Funciona como um leitor de página única, com navegação por capítulos, índice lateral, barra de progresso e suporte total a Português e Inglês.</p>
+      <h4>Funcionalidades</h4>
+      <ul>
+        <li>Bilingue — troca instantânea entre Português e Inglês, incluindo os comentários dentro dos blocos de código.</li>
+        <li>Tema claro e escuro.</li>
+        <li>Retoma de leitura — guarda localmente em que página, idioma e tema ficaste, e volta exatamente para lá na próxima vez que abrires o ficheiro.</li>
+        <li>Links diretos por página, permitindo abrir o guia já num capítulo específico.</li>
+      </ul>
+      <h4>Conteúdo atual</h4>
+      <p>O guia cobre hoje o Capítulo 1 — Fundamentos de Navegação, com 46 comandos e combinações organizados em seis blocos temáticos: descobrir onde estás, listar e ver conteúdo, navegar estrategicamente, encontrar e buscar, estrutura e metadados, e combinações avançadas. Novos capítulos vão sendo adicionados progressivamente.</p>
+      <h4>Licença</h4>
+      <p>O código (HTML/CSS/JS) está sob licença MIT. O texto e o conteúdo do ebook — explicações, exemplos, biografia do autor — pertencem a Leonardo Sebastião: pode ser partilhado e citado com atribuição, mas não redistribuído nem vendido como próprio.</p>
+    </div>
+    <div data-lang="en">
+      <p>An interactive HTML, CSS and JavaScript ebook — no frameworks, no build step — that teaches the Linux terminal from scratch. It works as a single-page reader, with chapter navigation, a side index, a progress bar and full Portuguese/English support.</p>
+      <h4>Features</h4>
+      <ul>
+        <li>Bilingual — instant switching between Portuguese and English, including the comments inside code blocks.</li>
+        <li>Light and dark theme.</li>
+        <li>Resume reading — locally saves which page, language and theme you were on, and returns exactly there the next time you open the file.</li>
+        <li>Direct per-page links, letting the guide open straight into a specific chapter.</li>
+      </ul>
+      <h4>Current content</h4>
+      <p>The guide currently covers Chapter 1 — Navigation Fundamentals, with 46 commands and combinations organized into six thematic blocks: finding out where you are, listing and viewing content, navigating strategically, finding and searching, structure and metadata, and advanced combinations. New chapters are being added progressively.</p>
+      <h4>License</h4>
+      <p>The code (HTML/CSS/JS) is under the MIT license. The ebook's text and content — explanations, examples, author bio — belong to Leonardo Sebastião: it can be shared and quoted with attribution, but not redistributed or sold as your own.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal — full project description -->
+<div class="project-modal-overlay" id="project-modal-overlay">
+  <div class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <button type="button" class="project-modal-close" id="project-modal-close" aria-label="Close">×</button>
+    <h3 class="project-modal-title" id="project-modal-title"></h3>
+    <div class="project-modal-body" id="project-modal-body"></div>
+  </div>
+</div>
+
+<script src="../main.js"></script>
+</body>
+</html>
