@@ -1,12 +1,10 @@
-# Portfolio — Leonardo Sebastião Cxi5
+# Portfolio — Leonardo Sebastião (Cxi5)
 
 Site pessoal estático, bilingue (PT/EN), sem framework e sem build step —
 HTML puro servido diretamente. Apresenta quem sou, a stack que uso e os
 projetos que construí.
 
 **🔗 Live:** [cxi5.site.je](https://cxi5.site.je/)
-
-![preview](og-image.png)
 
 ---
 
@@ -64,3 +62,31 @@ Sem framework e sem build step — cada página é um `.html` autossuficiente:
 - Tags `hreflang` para as versões PT/EN
 - `sitemap.xml` e ficheiro de verificação do Google Search Console
 - Favicons em múltiplos formatos (`.ico`, `.png` 16/32, apple-touch-icon)
+
+## Estrutura de pastas
+
+```
+portfolio/
+├── index.html
+├── projetos.html
+├── en/
+│   ├── index.html
+│   └── projetos.html
+├── style.css
+├── main.js
+├── img/
+│   └── projects/          (capturas horizontal/vertical de cada projeto)
+├── favicon.ico, favicon-16.png, favicon-32.png, apple-touch-icon.png
+├── og-image.png
+├── robots.txt
+├── sitemap.xml
+└── google2493e96d81cc9262.html
+```
+
+## Limitações conhecidas
+
+- Sem back-end e sem formulário de contacto — todo o contacto é feito por
+  link direto de WhatsApp.
+- Conteúdo dos 4 projetos em destaque (descrições curtas e completas) é
+  mantido manualmente em duplicado entre `index.html`/`projetos.html` e as
+  respetivas versões em inglês, por não haver build step nem templating.

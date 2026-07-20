@@ -233,8 +233,8 @@ section { min-height:100vh; display:flex; align-items:center; }
 
 /* PROJECTS — FULL PAGE (projetos.html) */
 .projects-full-list { display:flex; flex-direction:column; gap:2rem; width:100%; }
-.projects-full-list .project-card { display:grid; grid-template-columns:280px 1fr; }
-.projects-full-list .project-image { aspect-ratio:auto; height:100%; }
+.projects-full-list .project-card { display:grid; grid-template-columns:280px 1fr; align-items:start; }
+.projects-full-list .project-image { aspect-ratio:2.1/1; height:auto; align-self:start; }
 @media(max-width:1024px) and (min-width:769px){ .projects-full-list .project-card { grid-template-columns:220px 1fr; } }
 @media(max-width:768px){ .projects-full-list .project-card { grid-template-columns:1fr; } .projects-full-list .project-image { aspect-ratio:2.1/1; } }
 .projects-page-hero { padding:7rem 10vw 1rem; }
@@ -328,6 +328,9 @@ footer span { color:var(--cyan); }
 .project-modal-body h4 { font-size:.95rem; color:var(--white); margin:1.25rem 0 .5rem; }
 .project-modal-body ul { padding-left:1.2rem; margin-bottom:1rem; }
 .project-modal-body li { margin-bottom:.4rem; }
+.demo-account { background:rgba(0,217,245,.06); border:1px solid rgba(0,217,245,.18); border-radius:6px; padding:.9rem 1.1rem; margin-bottom:1.25rem; }
+.demo-account strong { display:block; font-size:.82rem; color:var(--white); margin-bottom:.5rem; }
+.demo-account code { display:block; font-family:'JetBrains Mono',monospace; font-size:.82rem; color:var(--cyan); word-break:break-all; line-height:1.6; }
 body.modal-open { overflow:hidden; }
 
 /* MOOD POR PROJETO — o modal muda de tom consoante o projeto aberto,
