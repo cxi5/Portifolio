@@ -4,7 +4,7 @@
 
 ### Leonardo Sebastião — Front-end Developer
 
-**Portfolio pessoal estático • Bilingue (PT / EN) • Zero framework • Zero build step**
+**Portfolio pessoal • Bilingue (PT / EN) • Zero framework • Zero build step**
 
 <br>
 
@@ -75,8 +75,6 @@ portfolio/
 └── README.md
 ```
 
----
-
 ## Páginas
 
 | Página | Descrição |
@@ -133,23 +131,6 @@ HTML5  •  CSS3  •  JavaScript Vanilla  •  Google Fonts
 - `sitemap.xml` + ficheiro de verificação do Google Search Console
 - Favicons em múltiplos formatos
 - Imagens em WebP com `loading="lazy"`
-
----
-
-## Como usar
-
-1. Clone ou descarregue o repositório
-2. Abra `index.html` diretamente no browser  
-   **ou** sirva a pasta com qualquer servidor estático:
-
-```bash
-# Exemplo rápido
-npx serve .
-```
-
-Não é necessário instalar dependências nem executar build.
-
----
 
 ## Links
 
