@@ -6,8 +6,6 @@ projetos que construí.
 
 **🔗 Live:** [cxi5.site.je](https://cxi5.site.je/)
 
-![preview](og-image.png)
-
 ---
 
 ## Páginas
