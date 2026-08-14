@@ -136,7 +136,7 @@ HTML5  •  CSS3  •  JavaScript Vanilla  •  Google Fonts
 
 | | |
 |---|---|
-| **Live** | [cxi5.site.je](https://cxi5.site.je/) |
+| **site** | [cxi5.site.je](https://cxi5.site.je/) |
 | **GitHub** | [github.com/cxi5](https://github.com/cxi5) |
 | **CodePen** | [codepen.io/cxi5](https://codepen.io/cxi5) |
 | **X** | [x.com/cx50z](https://x.com/cx50z) |
