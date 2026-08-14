@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://cxi5.site.je/sitemap.xml
