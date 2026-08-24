@@ -442,5 +442,6 @@ function loadScene3DWhenNear() {
     });
   }, { rootMargin: '600px' });
   loaderObs.observe(section);
+
 }
 loadScene3DWhenNear();
