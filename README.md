@@ -32,49 +32,6 @@ O portfólio apresenta quem sou, a stack que utilizo e os projetos que construí
 
 ---
 
-## Destaques
-
-| Recurso | Descrição |
-|--------|-----------|
-| **Bilingue real** | Versões PT e EN com conteúdo próprio + troca instantânea via `data-pt` / `data-en` |
-| **Zero dependências** | HTML + CSS + JS vanilla. Sem React, sem Vite, sem npm |
-| **SEO completo** | Meta tags, Open Graph, Twitter Cards, `hreflang`, sitemap e Google Search Console |
-| **Animações leves** | Matrix canvas, reveal on scroll e carrossel com suporte a teclado/arrasto |
-| **Modais temáticos** | Cada projeto tem a sua própria “mood color” no modal de descrição |
-| **WhatsApp ofuscado** | Número codificado em base64 para dificultar bots |
-
----
-
-## Estrutura do projeto
-
-```text
-portfolio/
-├── index.html                  # Página principal (PT)
-├── projetos.html               # Lista completa de projetos (PT)
-├── en/
-│   ├── index.html              # Página principal (EN)
-│   └── projetos.html           # Lista completa de projetos (EN)
-├── css/
-│   └── style.css               # Estilos partilhados
-├── js/
-│   └── main.js                 # JavaScript partilhado
-├── img/
-│   └── projects/               # Screenshots dos projetos
-│       ├── luxestay-horizontal.webp
-│       ├── nexdoc-horizontal.webp
-│       ├── softsolucoes-horizontal.webp
-│       └── terminal-horizontal.webp
-├── favicon.ico
-├── favicon-16.png
-├── favicon-32.png
-├── apple-touch-icon.png
-├── og-image.png
-├── robots.txt
-├── sitemap.xml
-├── google37376cb676225d15.html
-└── README.md
-```
-
 ## Páginas
 
 | Página | Descrição |
@@ -94,32 +51,6 @@ HTML5  •  CSS3  •  JavaScript Vanilla  •  Google Fonts
 - **CSS** → `css/style.css` (partilhado)
 - **JS** → `js/main.js` (partilhado)
 - **Fontes** → Space Grotesk + JetBrains Mono
-
----
-
-## Funcionalidades principais
-
-- **Troca de idioma instantânea**  
-  Atributos `data-pt` / `data-en` — sem reload e sem biblioteca de i18n.
-
-- **Modal de descrição de projeto**  
-  Abre com foco preso, fecha com `Esc`, clique fora ou botão.  
-  Existe apenas em `projetos.html` (não no carrossel da home).
-
-- **Mood por projeto**  
-  Cada modal muda a cor de destaque conforme o projeto (NexDoc, LuxeStay, Soft Soluções, Terminal).
-
-- **Animação Matrix**  
-  Canvas na secção “Quem sou”, pausada automaticamente quando a aba não está visível.
-
-- **Carrossel de projetos**  
-  Navegação por setas, arrasto ou teclado.
-
-- **Reveal on scroll**  
-  Animações de entrada com `IntersectionObserver`.
-
-- **Links de WhatsApp ofuscados**  
-  Número guardado em base64 e decodificado apenas no browser.
 
 ---
 
@@ -145,8 +76,6 @@ HTML5  •  CSS3  •  JavaScript Vanilla  •  Google Fonts
 ---
 
 <div align="center">
-
-**Feito com HTML, CSS e JavaScript puro**
 
 `class Cxi5 {}`
 
